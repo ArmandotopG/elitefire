@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Privacy Policy | EliteFire Protect Ltd</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      background: #000;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .top-left,
+    .top-right {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .site-header {
+      background: #fff;
+      color: #111;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .header-inner {
+      height: 105px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      height: 105px;
+      width: auto;
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 45px;
+      flex: 1;
+      margin-right: 80px;
+    }
+
+    .nav a {
+      color: #111;
+      font-weight: bold;
+      font-size: 17px;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav a:hover {
+      color: #9f1111;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 285px;
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: 0.25s ease;
+      z-index: 99999;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 15px 18px;
+      color: #333;
+      font-size: 15px;
+      font-weight: 600;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu a:hover {
+      background: #f7f7f7;
+      color: #9f1111;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .header-btn {
+      background: #9f1111;
+      color: #fff !important;
+      padding: 13px 24px;
+      border-radius: 4px;
+    }
+
+    .header-btn:hover {
+      background: #750b0b;
+    }
+
+    .policy-hero {
+      min-height: 360px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.74)),
+        url("hero-bg.webp") center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 55px 0;
+    }
+
+    .policy-hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      border-left: 5px solid #9f1111;
+      padding-left: 16px;
+      margin-bottom: 24px;
+    }
+
+    .policy-hero h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .policy-hero p {
+      font-size: 18px;
+      color: #eee;
+      max-width: 760px;
+    }
+
+    .policy-section {
+      background: #fff;
+      color: #222;
+      padding: 75px 0;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.42fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .policy-main small {
+      color: #9f1111;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 15px;
+    }
+
+    .policy-main small::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 3px;
+      background: #9f1111;
+    }
+
+    .policy-main h2 {
+  font-size: 34px;
+  line-height: 1.25;
+  margin-bottom: 34px;
+  color: #9f1111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+    .policy-main h3 {
+  color: #555;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 34px 0 14px;
+}
+
+    .policy-main p {
+      color: #555;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .policy-main ul {
+      margin: 14px 0 22px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .policy-main li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .policy-main li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #9f1111;
+      font-weight: bold;
+    }
+
+    .policy-info-box {
+      background: #f5f5f5;
+      padding: 34px 32px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+      border-radius: 4px;
+      position: sticky;
+      top: 135px;
+    }
+
+    .policy-info-box h3 {
+      color: #9f1111;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .policy-info-box p {
+      color: #555;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    .policy-info-box strong {
+      color: #222;
+    }
+
+    .policy-info-box a {
+      color: #9f1111;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      background: #101418;
+      color: #fff;
+      padding: 55px 0 35px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.1fr;
+      gap: 38px;
+      align-items: flex-start;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 18px;
+      border-left: 4px solid #9f1111;
+      padding-left: 12px;
+    }
+
+    .footer-col p,
+    .footer-col li {
+      color: #d6d6d6;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links li::before {
+      content: "›";
+      color: #9f1111;
+      font-weight: bold;
+      margin-right: 8px;
+      transition: 0.25s ease;
+    }
+
+    .footer-links a,
+    .footer-policy-link {
+      color: #d6d6d6;
+      transition: 0.25s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-policy-link:hover {
+      color: #9f1111;
+    }
+
+    .footer-brand {
+      text-align: center;
+    }
+
+    .footer-brand img {
+      max-width: 210px;
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand span {
+      color: #9f1111;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .reveal-left,
+.reveal-right,
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left {
+  transform: translateX(-45px);
+}
+
+.reveal-right {
+  transform: translateX(45px);
+}
+
+.reveal {
+  transform: translateY(30px);
+}
+
+.reveal-left.active,
+.reveal-right.active,
+.reveal.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+    @media (max-width: 900px) {
+      .footer-grid,
+      .policy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        text-align: left;
+      }
+
+      .policy-info-box {
+        position: static;
+      }
+
+      .policy-hero h1 {
+        font-size: 36px;
+      }
+
+      .header-inner {
+        height: auto;
+        padding: 15px 0;
+        flex-direction: column;
+      }
+
+      .nav {
+        margin-right: 0;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+  .top-bar {
+    font-size: 13px;
+  }
+
+  .top-bar-inner {
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .top-left,
+  .top-right {
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .header-inner {
+    gap: 18px;
+  }
+
+  .brand img {
+    height: 82px;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav a {
+    font-size: 15px;
+  }
+
+  .header-btn {
+    padding: 11px 18px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 8px;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: none;
+  }
+
+  .service-hero {
+    min-height: 290px;
+    padding: 38px 0;
+  }
+
+  .service-hero h1 {
+    font-size: 34px;
+  }
+
+  .service-hero p {
+    font-size: 16px;
+  }
+
+  .service-content {
+    padding: 45px 0;
+  }
+
+  .service-content h2 {
+    font-size: 25px;
+  }
+
+  .service-info-box {
+    padding: 26px 22px;
+  }
+
+  .services-section {
+    padding: 55px 0 105px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    text-align: left;
+  }
+
+  .footer-brand img {
+    max-width: 180px;
+  }
+
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-left">
+        <span>info@elitefireprotect.co.uk</span>
+        <span>01223 485088</span>
+      </div>
+
+      <div class="top-right">
+        <span>UK's Leading Fire Protection Experts</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="Elite Fire Protect Ltd Logo" />
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+
+        <div class="nav-dropdown">
+          <a href="index.html#services" class="nav-drop-link">Services ▾</a>
+
+          <div class="dropdown-menu">
+            <a href="fire-stopping.html">Fire Stopping</a>
+            <a href="acoustic-sealing.html">Acoustic Sealing</a>
+            <a href="air-sealing.html">Air Sealing</a>
+            <a href="intumescent-painting.html">Intumescent Painting to Steelwork</a>
+            <a href="fire-curtains-barriers.html">Fire Curtains & Barriers</a>
+            <a href="fire-boarding.html">Fire Boarding</a>
+            <a href="fire-survey.html">Fire Stopping Survey</a>
+          </div>
+        </div>
+
+        <a href="contact.html" class="header-btn">Contact us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="policy-hero">
+    <div class="container">
+      <div class="policy-hero-content reveal-left">
+        <span class="eyebrow">Data Protection</span>
+
+        <h1>Privacy Policy</h1>
+
+        <p>
+          This Privacy Policy explains how EliteFire Protect Ltd collects, uses,
+          stores, and protects personal information in connection with our website,
+          enquiries, quotations, projects, and business operations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section class="policy-section">
+  <div class="container policy-grid">
+
+    <div class="policy-main reveal-left">
+      <h2>DATA PRIVACY NOTICE</h2>
+
+      <p>
+        <strong>Name:</strong> EliteFire Protect Ltd
+      </p>
+
+      <p>
+        <strong>Registered Office:</strong> First Floor 83d London Road,
+        Romford, Essex, England, RM7 9QD
+      </p>
+
+      <p>
+        <strong>Operating From:</strong> Cambridge, United Kingdom
+      </p>
+
+      <p>
+        <strong>Email:</strong> info@elitefireprotect.co.uk
+      </p>
+
+      <p>
+        <strong>Telephone:</strong> 01223 485088
+      </p>
+
+      <h3>Purpose of the Processing and Legal Basis</h3>
+
+      <p>
+        The personal information we process is usually limited to business contact
+        details, enquiry information, project details, drawings, specifications,
+        correspondence, quotation information, order details, invoice records, and
+        documentation required for the services we provide.
+      </p>
+
+      <p>
+        The lawful basis we normally rely on is contractual necessity, where the
+        information is required so that we can respond to your enquiry, provide a
+        quotation, process an order, manage a project, carry out passive fire
+        protection works, issue documentation, and communicate with you in relation
+        to our services.
+      </p>
+
+      <p>
+        We may also rely on legitimate interests where we maintain professional
+        business relationships with clients, contractors, suppliers, consultants,
+        or other business contacts. This may include responding to enquiries,
+        keeping in touch about current or previous projects, discussing future
+        work opportunities, or referring to previous communications where relevant.
+      </p>
+
+      <p>
+        Where we are required to keep records for tax, accounting, insurance,
+        contractual, health and safety, or regulatory reasons, we may process and
+        retain information in order to comply with our legal obligations.
+      </p>
+
+      <p>
+        Should you choose not to provide information that is necessary for us to
+        deal with your enquiry, prepare a quotation, or carry out works, we may be
+        unable to provide the requested service.
+      </p>
+
+      <p>
+        If we ever wish to send marketing communications that are not directly
+        related to an existing business relationship or enquiry, we will only do
+        so where we have a lawful basis to contact you. You may ask us to stop
+        sending such communications at any time.
+      </p>
+
+      <h3>Information Security</h3>
+
+      <p>
+        EliteFire Protect Ltd takes reasonable steps to keep personal information
+        secure and to protect it from unauthorised access, loss, misuse, alteration,
+        or disclosure.
+      </p>
+
+      <p>
+        Our business information is held using secure electronic systems, including
+        email, cloud storage, business documents, and company devices. Access to
+        information is restricted to authorised persons who need it for business
+        purposes.
+      </p>
+
+      <p>
+        Company devices and systems are password protected where appropriate. We
+        use suitable security measures, including anti-virus and system protection,
+        to help maintain the safety of our electronic records.
+      </p>
+
+      <p>
+        Where paper documents are used, we aim to keep printing to a minimum. Any
+        physical records are handled responsibly and stored securely where required.
+        Information that is no longer needed is disposed of securely.
+      </p>
+
+      <h3>Transfer of Data Outside the UK</h3>
+
+      <p>
+        To the best of our knowledge, we do not deliberately transfer client or
+        business contact data outside the United Kingdom unless this is necessary
+        through the use of secure business systems, cloud providers, website
+        providers, or email services.
+      </p>
+
+      <p>
+        Where a service provider processes information outside the United Kingdom,
+        we expect appropriate safeguards to be in place in accordance with UK data
+        protection requirements.
+      </p>
+
+      <h3>Data Retention Periods</h3>
+
+      <p>
+        We will only keep personal information for as long as necessary for the
+        purpose for which it was collected.
+      </p>
+
+      <p>
+        In ordinary circumstances, business records, project documents, quotation
+        records, order records, invoices, and related correspondence may be kept
+        for up to seven years. This allows us to meet accounting, tax, insurance,
+        contractual, and legal requirements.
+      </p>
+
+      <p>
+        If a longer retention period is required by law, regulation, contract,
+        insurance obligation, dispute, or other legitimate business reason, the
+        relevant information may be retained for that longer period.
+      </p>
+
+      <h3>Your Data Subject Rights</h3>
+
+      <p>
+        Under UK data protection law, you have rights in relation to the personal
+        information we hold about you. These may include the right to request access
+        to your personal information, the right to request correction of inaccurate
+        information, the right to request erasure in certain circumstances, the
+        right to object to certain processing, the right to restrict processing,
+        and the right to withdraw consent where consent is relied upon.
+      </p>
+
+      <p>
+        If you wish to make a request regarding your personal information, please
+        contact us using the email address shown in this notice. We may ask you to
+        provide proof of identity before responding to certain requests.
+      </p>
+
+      <p>
+        We will respond to valid requests within the applicable legal timeframe.
+        Where a request is excessive, repetitive, or manifestly unfounded, we may
+        be entitled to refuse the request or charge a reasonable fee in accordance
+        with data protection law.
+      </p>
+
+      <h3>Automated Decision Making</h3>
+
+      <p>
+        EliteFire Protect Ltd does not use personal information for automated
+        decision making or profiling.
+      </p>
+
+      <h3>Complaints</h3>
+
+      <p>
+        If you are concerned about the way we have handled your personal information,
+        please contact us first so that we can review the matter and respond
+        appropriately.
+      </p>
+
+      <p>
+        You also have the right to complain to the Information Commissioner’s
+        Office, which is the UK supervisory authority for data protection matters.
+      </p>
+
+      <p>
+        ICO helpline: 0303 123 1113<br>
+        ICO website:
+        <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">
+          ico.org.uk/make-a-complaint
+        </a>
+      </p>
+
+      <p>
+        <strong>Last updated:</strong> May 2026
+      </p>
+    </div>
+
+    <aside class="policy-info-box reveal-right">
+      <h3>Contact Details</h3>
+
+      <p>
+        <strong>Company:</strong><br>
+        EliteFire Protect Ltd
+      </p>
+
+      <p>
+        <strong>Registered Office:</strong><br>
+        First Floor 83d London Road,<br>
+        Romford, Essex, England,<br>
+        RM7 9QD
+      </p>
+
+      <p>
+        <strong>Operating From:</strong><br>
+        Cambridge, United Kingdom
+      </p>
+
+      <p>
+        <strong>Email:</strong><br>
+        <a href="mailto:info@elitefireprotect.co.uk">info@elitefireprotect.co.uk</a>
+      </p>
+
+      <p>
+        <strong>Telephone:</strong><br>
+        <a href="tel:01223485088">01223 485088</a>
+      </p>
+
+      <p>
+        <strong>Company No:</strong><br>
+        16724298
+      </p>
+    </aside>
+
+  </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-col">
+        <h4>Contact Details</h4>
+        <p><strong>Registered Office:</strong><br>
+          First Floor 83d London Road, Romford, Essex, England, RM7 9QD
+        </p>
+
+        <p><strong>Operating From:</strong><br>
+          Cambridge, United Kingdom
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company Info</h4>
+        <p>Phone: 01223 485088</p>
+        <p>Email: info@elitefireprotect.co.uk</p>
+        <p>Company No: 16724298</p>
+
+        <p><a href="privacy-policy.html" class="footer-policy-link">Privacy Policy</a></p>
+        <p><a href="terms-and-conditions.html" class="footer-policy-link">Terms & Conditions</a></p>
+
+        <p>©️ 2026 EliteFire Protect Ltd.<br>All Rights Reserved.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="fire-stopping.html">Fire Stopping</a></li>
+          <li><a href="acoustic-sealing.html">Acoustic Sealing</a></li>
+          <li><a href="air-sealing.html">Air Sealing</a></li>
+          <li><a href="intumescent-painting.html">Intumescent Painting to Steelwork</a></li>
+          <li><a href="fire-curtains-barriers.html">Fire Curtains & Barriers</a></li>
+          <li><a href="fire-boarding.html">Fire Boarding</a></li>
+          <li><a href="fire-survey.html">Fire Stopping Survey</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-brand">
+        <img src="logo.png" alt="Elite Fire Protect Ltd Logo">
+        <p>Passive Fire Protection Specialists</p>
+        <span>Clean. Compliant. Professional.</span>
+      </div>
+
+    </div>
+  </footer>
+
+   <script>
+  function revealOnScroll() {
+    const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+    revealElements.forEach((element) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = element.getBoundingClientRect().top;
+      const revealPoint = 120;
+
+      if (elementTop < windowHeight - revealPoint) {
+        element.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+</script>
+
+</body>
+</html>

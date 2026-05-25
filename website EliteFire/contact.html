@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Contact Us | Elite Fire Protect Ltd</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    /* TOP BAR */
+
+    .top-bar {
+      background: #000;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .top-left,
+    .top-right {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      background: #fff;
+      color: #111;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .header-inner {
+      height: 105px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      height: 105px;
+      width: auto;
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 45px;
+      flex: 1;
+      margin-right: 80px;
+    }
+
+    .nav a {
+      color: #111;
+      font-weight: bold;
+      font-size: 17px;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav a:hover {
+      color: #9f1111;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 285px;
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: 0.25s ease;
+      z-index: 99999;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 15px 18px;
+      color: #333;
+      font-size: 15px;
+      font-weight: 600;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu a:hover {
+      background: #f7f7f7;
+      color: #9f1111;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .header-btn {
+      background: #9f1111;
+      color: #fff !important;
+      padding: 13px 24px;
+      border-radius: 4px;
+    }
+
+    .header-btn:hover {
+      background: #750b0b;
+    }
+
+    /* HERO */
+
+    .contact-hero {
+      min-height: 215px;
+      background:
+        linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.66)),
+        url("hero-bg.webp") center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 35px 0;
+    }
+
+    .contact-hero h1 {
+      font-size: 42px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      margin: 0 auto;
+    }
+
+    /* CONTACT SECTION */
+
+    .contact-section {
+      background: #fff;
+      color: #222;
+      padding: 38px 0 140px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .contact-form-box,
+    .contact-info-box {
+      background: #f5f5f5;
+      padding: 26px 28px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+      border-radius: 4px;
+    }
+
+    .contact-form-box h2,
+    .contact-info-box h2 {
+      color: #9f1111;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .contact-form-box p,
+    .contact-info-box p {
+      color: #555;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin-top: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px 14px;
+      background: #fff;
+      border: 1px solid #ddd;
+      color: #111;
+      font-size: 15px;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .contact-form textarea {
+      grid-column: 1 / -1;
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      width: 130px;
+      background: #9f1111;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .contact-form button:hover {
+      background: #750b0b;
+    }
+
+    .contact-detail {
+      margin-bottom: 11px;
+    }
+
+    .contact-detail strong {
+      color: #222;
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+
+    .contact-detail p {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #555;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      background: #101418;
+      color: #fff;
+      padding: 55px 0 35px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.1fr;
+      gap: 38px;
+      align-items: flex-start;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 18px;
+      border-left: 4px solid #9f1111;
+      padding-left: 12px;
+    }
+
+    .footer-col p,
+    .footer-col li {
+      color: #d6d6d6;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links li::before {
+      content: "›";
+      color: #9f1111;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .footer-links a,
+    .footer-policy-link {
+      color: #d6d6d6;
+      transition: 0.25s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-policy-link:hover {
+      color: #9f1111;
+    }
+
+    .footer-brand {
+      text-align: center;
+    }
+
+    .footer-brand img {
+      max-width: 210px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand span {
+      color: #9f1111;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    /* MOBILE */
+
+    /* SCROLL REVEAL ANIMATIONS */
+
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal {
+  transform: translateY(30px);
+}
+
+.reveal-left {
+  transform: translateX(-45px);
+}
+
+.reveal-right {
+  transform: translateX(45px);
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+    @media (max-width: 900px) {
+
+      .footer-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        height: auto;
+        padding: 15px 0;
+        flex-direction: column;
+      }
+
+      .nav {
+        margin-right: 0;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .contact-hero h1 {
+        font-size: 36px;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+
+  .top-bar {
+    font-size: 13px;
+  }
+
+  .top-bar-inner {
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .top-left,
+  .top-right {
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .header-inner {
+    gap: 18px;
+  }
+
+  .brand img {
+    height: 82px;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav a {
+    font-size: 15px;
+  }
+
+  .header-btn {
+    padding: 11px 18px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 8px;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: none;
+  }
+
+  
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    text-align: left;
+  }
+
+  .footer-brand img {
+    max-width: 180px;
+  }
+
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+
+      <div class="top-left">
+        <span>info@elitefireprotect.co.uk</span>
+        <span>01223 485088</span>
+      </div>
+
+      <div class="top-right">
+        <span>UK's Leading Fire Protection Experts</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <div class="brand">
+        <img src="logo.png" alt="Elite Fire Protect Ltd Logo" />
+      </div>
+
+      <nav class="nav">
+
+        <a href="index.html">Home</a>
+
+        <a href="index.html#about">About</a>
+
+        <div class="nav-dropdown">
+
+          <a href="index.html#services">Services ▾</a>
+
+          <div class="dropdown-menu">
+            <a href="fire-stopping.html">Fire Stopping</a>
+            <a href="acoustic-sealing.html">Acoustic Sealing</a>
+            <a href="air-sealing.html">Air Sealing</a>
+            <a href="intumescent-painting.html">Intumescent Painting to Steelwork</a>
+            <a href="fire-curtains-barriers.html">Fire Curtains & Barriers</a>
+            <a href="fire-boarding.html">Fire Boarding</a>
+            <a href="fire-survey.html">Fire Stopping Survey</a>
+          </div>
+
+        </div>
+
+        <a href="contact.html" class="header-btn">Contact us</a>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="contact-hero">
+    <div class="container">
+      <h1 class="reveal">Contact Us</h1>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+
+  <section class="contact-section">
+
+    <div class="container contact-grid">
+
+      <div class="contact-form-box reveal-left">
+
+        <h2>Send an Enquiry</h2>
+
+        <p>
+          Get in touch to discuss your fire stopping requirements,
+          request a quote, or send us your drawings and scope of works.
+        </p>
+
+        <form
+            class="contact-form"
+             name="enquiry"
+             method="POST"
+            data-netlify="true"
+            action="/thank-you.html"
+        >
+          <input type="hidden" name="form-name" value="enquiry" />
+
+          <input type="text" name="name" placeholder="Full Name" required />
+
+          <input type="email" name="email" placeholder="Email Address" required />
+
+          <input type="text" name="company" placeholder="Company Name" />
+
+          <input type="text" name="phone" placeholder="Telephone Number" />
+
+          <textarea name="message" placeholder="How can we help?" required></textarea>
+
+          <button type="submit">Submit</button>
+
+       </form>
+
+      </div>
+
+      <div class="contact-info-box reveal-right">
+
+        <h2>Contact Details</h2>
+
+        <div class="contact-detail">
+          <strong>Registered Office:</strong>
+          <p>First Floor 83d London Road, Romford, Essex, England, RM7 9QD</p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Operating From:</strong>
+          <p>Cambridge, United Kingdom</p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Phone:</strong>
+          <p><a href="tel:01223485088">01223 485088</a></p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Email:</strong>
+          <p><a href="mailto:info@elitefireprotect.co.uk">info@elitefireprotect.co.uk</a></p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Company No:</strong>
+          <p>16724298</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-col">
+
+        <h4>Contact Details</h4>
+
+        <p>
+          <strong>Registered Office:</strong><br>
+          First Floor 83d London Road, Romford, Essex, England, RM7 9QD
+        </p>
+
+        <p>
+          <strong>Operating From:</strong><br>
+          Cambridge, United Kingdom
+        </p>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Company Info</h4>
+
+        <p>Phone: 01223 485088</p>
+
+        <p>Email: info@elitefireprotect.co.uk</p>
+
+        <p>Company No: 16724298</p>
+
+        <p>
+          <a href="privacy-policy.html" class="footer-policy-link">
+            Privacy Policy
+          </a>
+        </p>
+
+        <p>
+          <a href="terms-and-conditions.html" class="footer-policy-link">
+            Terms & Conditions
+          </a>
+        </p>
+
+        <p>
+          ©️ 2026 EliteFire Protect Ltd.<br>
+          All Rights Reserved.
+        </p>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Our Services</h4>
+
+        <ul class="footer-links">
+
+          <li><a href="fire-stopping.html">Fire Stopping</a></li>
+
+          <li><a href="acoustic-sealing.html">Acoustic Sealing</a></li>
+
+          <li><a href="air-sealing.html">Air Sealing</a></li>
+
+          <li><a href="intumescent-painting.html">
+            Intumescent Painting to Steelwork
+          </a></li>
+
+          <li><a href="fire-curtains-barriers.html">
+            Fire Curtains & Barriers
+          </a></li>
+
+          <li><a href="fire-boarding.html">Fire Boarding</a></li>
+
+          <li><a href="fire-survey.html">Fire Stopping Survey</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-col footer-brand">
+
+        <img src="logo.png" alt="Elite Fire Protect Ltd Logo">
+
+        <p>Passive Fire Protection Specialists</p>
+
+        <span>Clean. Compliant. Professional.</span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+  function revealOnScroll() {
+    const revealElements = document.querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right"
+    );
+
+    revealElements.forEach(function (element) {
+      const windowHeight = window.innerHeight;
+      const elementTop = element.getBoundingClientRect().top;
+      const revealPoint = 120;
+
+      if (elementTop < windowHeight - revealPoint) {
+        element.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+
+  window.addEventListener("load", function () {
+    window.scrollTo(0, 0);
+    revealOnScroll();
+  });
+
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+</script>
+
+</body>
+</html>
