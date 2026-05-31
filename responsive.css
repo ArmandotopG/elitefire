@@ -379,7 +379,7 @@ strong {
 
   .brand img {
     width: auto;
-    height: clamp(58px, 13vw, 76px) !important;
+    height: clamp(67px, 15vw, 87px) !important;
   }
 
   .menu-toggle {
