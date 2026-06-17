@@ -52,9 +52,92 @@
     });
   };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initResponsiveMenu);
-  } else {
+  const encodeFormData = (formData) =>
+    new URLSearchParams(formData).toString();
+
+  const createSubmissionId = () => {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      return window.crypto.randomUUID();
+    }
+
+    return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  };
+
+  const refreshNetlifyMetadata = (form) => {
+    const submissionId = form.querySelector('input[name="submission_id"]');
+    const submittedAt = form.querySelector('input[name="submitted_at"]');
+
+    if (submissionId) {
+      submissionId.value = createSubmissionId();
+    }
+
+    if (submittedAt) {
+      submittedAt.value = new Date().toISOString();
+    }
+  };
+
+  const initNetlifyForms = () => {
+    document.querySelectorAll('form[data-netlify="true"]').forEach((form) => {
+      refreshNetlifyMetadata(form);
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        refreshNetlifyMetadata(form);
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.dataset.originalText = submitButton.textContent;
+          submitButton.textContent = "Sending...";
+        }
+
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encodeFormData(new FormData(form)),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Form submission failed");
+            }
+
+            window.location.href = form.getAttribute("action") || "/thank-you.html";
+          })
+          .catch(() => {
+            form.submit();
+          });
+      });
+    });
+  };
+
+  const initSite = () => {
     initResponsiveMenu();
+    initNetlifyForms();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSite);
+  } else {
+    initSite();
   }
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      document.querySelectorAll('form[data-netlify="true"]').forEach((form) => {
+        refreshNetlifyMetadata(form);
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitButton.dataset.originalText || submitButton.textContent;
+        }
+      });
+    }
+  });
 })();

@@ -1,5 +1,9 @@
 /* Shared navigation, footer, and responsive refinements for EliteFire Protect Ltd. */
 
+.hidden {
+  display: none !important;
+}
+
 .container {
   width: 90%;
   max-width: 1250px;
