@@ -588,9 +588,16 @@
              name="enquiry"
              method="POST"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
             action="/thank-you.html"
         >
           <input type="hidden" name="form-name" value="enquiry" />
+          <input type="hidden" name="submission_id" value="" />
+          <input type="hidden" name="submitted_at" value="" />
+          <input type="hidden" name="source_page" value="Contact page enquiry" />
+          <p class="hidden" aria-hidden="true">
+            <label>Do not fill this in: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
 
           <input type="text" name="name" placeholder="Full Name" required />
 

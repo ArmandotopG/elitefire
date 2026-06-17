@@ -897,8 +897,14 @@
           Get in touch to discuss your fire stopping requirements and request a quote.
         </p>
 
-        <form name="enquiry" method="POST" data-netlify="true" action="/thank-you.html">
+        <form name="enquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
           <input type="hidden" name="form-name" value="enquiry" />
+          <input type="hidden" name="submission_id" value="" />
+          <input type="hidden" name="submitted_at" value="" />
+          <input type="hidden" name="source_page" value="Homepage enquiry" />
+          <p class="hidden" aria-hidden="true">
+            <label>Do not fill this in: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
           <input type="text" name="name" placeholder="Full Name" required />
           <input type="email" name="email" placeholder="Email Address" required />
           <input type="text" name="company" placeholder="Company Name" />
