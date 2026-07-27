@@ -311,6 +311,10 @@ button {
   min-width: 0;
 }
 
+.contractor-support-grid {
+  min-width: 0;
+}
+
 .hero-text,
 .hero-card,
 .intro-left,
@@ -338,6 +342,10 @@ strong {
 }
 
 @media (max-width: 1100px) {
+  .contractor-support-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
   .header-inner {
     gap: 28px;
   }
@@ -476,6 +484,10 @@ strong {
     gap: 34px !important;
   }
 
+  .contractor-support-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   .hero-text h2,
   .service-hero h1,
   .policy-hero h1,
@@ -597,6 +609,11 @@ strong {
   .contact-section,
   .intro-section,
   .accreditations-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .contractor-support-section {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
